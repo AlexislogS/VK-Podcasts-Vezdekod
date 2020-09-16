@@ -14,5 +14,7 @@ enum AlertTitle {
     static let failedToCopyFile = "Не получилось скопировать файл"
     static let changeMusic = "Изменить музыку"
     static let deleteMusic = "Удалить музыку"
+    static let wrongInput = "Ошибка ввода"
+    static let pleaseFill = "Пожалуйста, заполните все поля"
     static let cancel = "Отменить"
 }

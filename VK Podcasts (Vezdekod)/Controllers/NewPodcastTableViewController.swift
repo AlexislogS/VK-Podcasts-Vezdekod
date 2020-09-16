@@ -65,7 +65,17 @@ final class NewPodcastTableViewController: UITableViewController {
     }
     
     @IBAction private func doneButtonPressed() {
-        
+        handleDoneButton()
+    }
+    
+    private func handleDoneButton() {
+        if imageChanged,
+            podcastTitleTextField.hasText,
+            podcastDescriptionTextField.hasText {
+        } else {
+            showAlert(with: AlertTitle.wrongInput,
+                      and: AlertTitle.pleaseFill)
+        }
     }
     
     @objc private func uploadImage(recognizer: UITapGestureRecognizer) {
@@ -100,6 +110,7 @@ extension NewPodcastTableViewController: UITextFieldDelegate {
             podcastDescriptionTextField.becomeFirstResponder()
         } else {
             podcastDescriptionTextField.resignFirstResponder()
+            handleDoneButton()
         }
         return true
     }
@@ -165,5 +176,6 @@ extension NewPodcastTableViewController: UIDocumentPickerDelegate {
         podcastDurationLabel.text = "0:21"
         [uploadButton, uploadStackView].forEach { $0?.isHidden = true }
         [defaultPodcastImageView, podcastNameLabel, podcastDurationLabel, podcastEditLabel, podcastEditButton].forEach { $0?.isHidden = false }
+        doneButton.isEnabled = true
     }
 }
