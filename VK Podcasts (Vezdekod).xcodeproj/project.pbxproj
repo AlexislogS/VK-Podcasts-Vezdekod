@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		EA6AB818251210D400E92ECC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6AB817251210D400E92ECC /* AppDelegate.swift */; };
 		EA6AB81A251210D400E92ECC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6AB819251210D400E92ECC /* SceneDelegate.swift */; };
-		EA6AB81C251210D400E92ECC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6AB81B251210D400E92ECC /* ViewController.swift */; };
+		EA6AB81C251210D400E92ECC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6AB81B251210D400E92ECC /* WelcomeViewController.swift */; };
 		EA6AB81F251210D400E92ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6AB81D251210D400E92ECC /* Main.storyboard */; };
 		EA6AB821251210D600E92ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6AB820251210D600E92ECC /* Assets.xcassets */; };
 		EA6AB824251210D600E92ECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6AB822251210D600E92ECC /* LaunchScreen.storyboard */; };
+		EA6AB833251222B100E92ECC /* NewPodcastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6AB832251222B100E92ECC /* NewPodcastTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA6AB814251210D400E92ECC /* VK Podcasts (Vezdekod).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK Podcasts (Vezdekod).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6AB817251210D400E92ECC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6AB819251210D400E92ECC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EA6AB81B251210D400E92ECC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA6AB81B251210D400E92ECC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EA6AB81E251210D400E92ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA6AB820251210D600E92ECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA6AB823251210D600E92ECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA6AB825251210D600E92ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA6AB832251222B100E92ECC /* NewPodcastTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodcastTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		EA6AB816251210D400E92ECC /* VK Podcasts (Vezdekod) */ = {
 			isa = PBXGroup;
 			children = (
-				EA6AB817251210D400E92ECC /* AppDelegate.swift */,
-				EA6AB819251210D400E92ECC /* SceneDelegate.swift */,
-				EA6AB81B251210D400E92ECC /* ViewController.swift */,
-				EA6AB81D251210D400E92ECC /* Main.storyboard */,
-				EA6AB820251210D600E92ECC /* Assets.xcassets */,
-				EA6AB822251210D600E92ECC /* LaunchScreen.storyboard */,
-				EA6AB825251210D600E92ECC /* Info.plist */,
+				EA6AB82D251221E700E92ECC /* Views */,
+				EA6AB82E251221EE00E92ECC /* Controllers */,
+				EA6AB82F2512220C00E92ECC /* Resources */,
+				EA6AB8302512222200E92ECC /* Application */,
+				EA6AB8312512222D00E92ECC /* Configuration */,
 			);
 			path = "VK Podcasts (Vezdekod)";
+			sourceTree = "<group>";
+		};
+		EA6AB82D251221E700E92ECC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA6AB81D251210D400E92ECC /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA6AB82E251221EE00E92ECC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA6AB81B251210D400E92ECC /* WelcomeViewController.swift */,
+				EA6AB832251222B100E92ECC /* NewPodcastTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EA6AB82F2512220C00E92ECC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EA6AB820251210D600E92ECC /* Assets.xcassets */,
+				EA6AB822251210D600E92ECC /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EA6AB8302512222200E92ECC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EA6AB817251210D400E92ECC /* AppDelegate.swift */,
+				EA6AB819251210D400E92ECC /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EA6AB8312512222D00E92ECC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				EA6AB825251210D600E92ECC /* Info.plist */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA6AB81C251210D400E92ECC /* ViewController.swift in Sources */,
+				EA6AB81C251210D400E92ECC /* WelcomeViewController.swift in Sources */,
+				EA6AB833251222B100E92ECC /* NewPodcastTableViewController.swift in Sources */,
 				EA6AB818251210D400E92ECC /* AppDelegate.swift in Sources */,
 				EA6AB81A251210D400E92ECC /* SceneDelegate.swift in Sources */,
 			);
@@ -286,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UG5F626PKK;
-				INFOPLIST_FILE = "VK Podcasts (Vezdekod)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/VK Podcasts (Vezdekod)/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UG5F626PKK;
-				INFOPLIST_FILE = "VK Podcasts (Vezdekod)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/VK Podcasts (Vezdekod)/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction func close(_ sender: UIBarButtonItem) {
+        presentingViewController?.dismiss(animated: true)
     }
-
-
+    
 }
 
