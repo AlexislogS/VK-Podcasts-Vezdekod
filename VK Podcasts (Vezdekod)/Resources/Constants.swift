@@ -9,6 +9,10 @@
 import Foundation
 
 enum AlertTitle {
-    static let failedToGetImage = "Failed to get image"
-    static let pleaseTryAgain = "Failed to get image"
+    static let failedToGetImage = "Не получилось добавить изображение"
+    static let pleaseTryAgain = "Пожалуйста, попробуйте снова"
+    static let failedToCopyFile = "Не получилось скопировать файл"
+    static let changeMusic = "Изменить музыку"
+    static let deleteMusic = "Удалить музыку"
+    static let cancel = "Отменить"
 }

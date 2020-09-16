@@ -15,6 +15,11 @@
 		EA6AB833251222B100E92ECC /* NewPodcastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6AB832251222B100E92ECC /* NewPodcastTableViewController.swift */; };
 		EA72188C251243A000E4637E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72188B251243A000E4637E /* Constants.swift */; };
 		EA72188E251243D800E4637E /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72188D251243D800E4637E /* UIViewController+.swift */; };
+		EA7218942512867200E4637E /* EditPodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7218932512867200E4637E /* EditPodcastViewController.swift */; };
+		EA72189825128D3A00E4637E /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA72189725128D3A00E4637E /* test.mp3 */; };
+		EA72189A251291BA00E4637E /* Ehrling - Take Me Away.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA721899251291BA00E4637E /* Ehrling - Take Me Away.wav */; };
+		EA72189C25129C9200E4637E /* TimeCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72189B25129C9200E4637E /* TimeCodeCell.swift */; };
+		EA72189E25129F5500E4637E /* TimeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72189D25129F5500E4637E /* TimeCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		EA6AB832251222B100E92ECC /* NewPodcastTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPodcastTableViewController.swift; sourceTree = "<group>"; };
 		EA72188B251243A000E4637E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EA72188D251243D800E4637E /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		EA7218932512867200E4637E /* EditPodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPodcastViewController.swift; sourceTree = "<group>"; };
+		EA72189725128D3A00E4637E /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
+		EA721899251291BA00E4637E /* Ehrling - Take Me Away.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ehrling - Take Me Away.wav"; sourceTree = "<group>"; };
+		EA72189B25129C9200E4637E /* TimeCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCodeCell.swift; sourceTree = "<group>"; };
+		EA72189D25129F5500E4637E /* TimeCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 		EA6AB816251210D400E92ECC /* VK Podcasts (Vezdekod) */ = {
 			isa = PBXGroup;
 			children = (
+				EA72189F25129F7100E4637E /* Model */,
 				EA6AB82D251221E700E92ECC /* Views */,
 				EA6AB82E251221EE00E92ECC /* Controllers */,
 				EA72188F251243DE00E4637E /* Extensions */,
@@ -74,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				EA6AB81D251210D400E92ECC /* Main.storyboard */,
+				EA72189B25129C9200E4637E /* TimeCodeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -82,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				EA6AB832251222B100E92ECC /* NewPodcastTableViewController.swift */,
+				EA7218932512867200E4637E /* EditPodcastViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -92,6 +105,8 @@
 				EA72188B251243A000E4637E /* Constants.swift */,
 				EA6AB820251210D600E92ECC /* Assets.xcassets */,
 				EA6AB822251210D600E92ECC /* LaunchScreen.storyboard */,
+				EA72189725128D3A00E4637E /* test.mp3 */,
+				EA721899251291BA00E4637E /* Ehrling - Take Me Away.wav */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -119,6 +134,14 @@
 				EA72188D251243D800E4637E /* UIViewController+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA72189F25129F7100E4637E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA72189D25129F5500E4637E /* TimeCode.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +204,9 @@
 			files = (
 				EA6AB824251210D600E92ECC /* LaunchScreen.storyboard in Resources */,
 				EA6AB821251210D600E92ECC /* Assets.xcassets in Resources */,
+				EA72189825128D3A00E4637E /* test.mp3 in Resources */,
 				EA6AB81F251210D400E92ECC /* Main.storyboard in Resources */,
+				EA72189A251291BA00E4637E /* Ehrling - Take Me Away.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +220,11 @@
 				EA72188C251243A000E4637E /* Constants.swift in Sources */,
 				EA72188E251243D800E4637E /* UIViewController+.swift in Sources */,
 				EA6AB833251222B100E92ECC /* NewPodcastTableViewController.swift in Sources */,
+				EA72189E25129F5500E4637E /* TimeCode.swift in Sources */,
 				EA6AB818251210D400E92ECC /* AppDelegate.swift in Sources */,
 				EA6AB81A251210D400E92ECC /* SceneDelegate.swift in Sources */,
+				EA7218942512867200E4637E /* EditPodcastViewController.swift in Sources */,
+				EA72189C25129C9200E4637E /* TimeCodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

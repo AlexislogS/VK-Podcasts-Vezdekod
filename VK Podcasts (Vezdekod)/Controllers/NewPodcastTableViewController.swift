@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 final class NewPodcastTableViewController: UITableViewController {
     
@@ -30,26 +31,37 @@ final class NewPodcastTableViewController: UITableViewController {
     @IBOutlet private weak var podcastDurationLabel: UILabel!
     @IBOutlet private weak var podcastEditLabel: UILabel!
     @IBOutlet private weak var podcastEditButton: UIButton!
+    @IBOutlet private weak var uploadButton: UIButton!
     
     private var imageChanged = false
+    private var podcastURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         [explicitButton, excludeButton, trailerButton].forEach { $0?.setImage(#imageLiteral(resourceName: "check_box_on_24"), for: .selected)}
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let editVC = segue.destination as? EditPodcastViewController {
+            editVC.podcastURL = podcastURL
+        }
+    }
+    
     @IBAction func checkBoxPressed(_ sender: UIButton) {
         sender.isSelected = sender.isSelected ? false : true
     }
     
-    @IBAction func uploadPressed(_ sender: UIButton) {
-        sender.isHidden = true
-        uploadStackView.isHidden = true
-        [defaultPodcastImageView, podcastNameLabel, podcastDurationLabel, podcastEditLabel, podcastEditButton].forEach { $0?.isHidden = false }
-    }
-    
-    @IBAction func podcastEditButtonPressed() {
+    @IBAction func uploadPressed() {
+        #if targetEnvironment(simulator)
+        let path = Bundle.main.path(forResource: "test", ofType: "mp3")!
+            let url = URL(fileURLWithPath: path)
+            updateUIAfterImport(for: url)
         
+        #else
+        let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeAudio as String], in: .import)
+        documentPicker.delegate = self
+        present(documentPicker, animated: true)
+        #endif
     }
     
     @IBAction private func doneButtonPressed() {
@@ -122,5 +134,36 @@ extension NewPodcastTableViewController: UIImagePickerControllerDelegate, UINavi
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.presentingViewController?.dismiss(animated: true)
+    }
+}
+
+    // MARK: - UIDocumentPickerDelegate
+
+extension NewPodcastTableViewController: UIDocumentPickerDelegate {
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let selectedFileURL = urls.first,
+            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        
+        let sandBoxURL = dir.appendingPathComponent(selectedFileURL.lastPathComponent)
+        if FileManager.default.fileExists(atPath: sandBoxURL.path) {
+            print("File already exists")
+        } else {
+            do {
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandBoxURL)
+                updateUIAfterImport(for: selectedFileURL)
+            } catch let error {
+                showAlert(with: AlertTitle.failedToCopyFile,
+                          and: error.localizedDescription)
+            }
+        }
+    }
+    
+    private func updateUIAfterImport(for url: URL) {
+        podcastURL = url
+        podcastNameLabel.text = url.lastPathComponent
+        podcastDurationLabel.text = "0:21"
+        [uploadButton, uploadStackView].forEach { $0?.isHidden = true }
+        [defaultPodcastImageView, podcastNameLabel, podcastDurationLabel, podcastEditLabel, podcastEditButton].forEach { $0?.isHidden = false }
     }
 }
