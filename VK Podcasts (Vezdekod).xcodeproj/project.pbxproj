@@ -20,6 +20,7 @@
 		EA72189A251291BA00E4637E /* Ehrling - Take Me Away.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA721899251291BA00E4637E /* Ehrling - Take Me Away.wav */; };
 		EA72189C25129C9200E4637E /* TimeCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72189B25129C9200E4637E /* TimeCodeCell.swift */; };
 		EA72189E25129F5500E4637E /* TimeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72189D25129F5500E4637E /* TimeCode.swift */; };
+		EA920BAA25135F7A0091190E /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA920BA925135F7A0091190E /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EA721899251291BA00E4637E /* Ehrling - Take Me Away.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ehrling - Take Me Away.wav"; sourceTree = "<group>"; };
 		EA72189B25129C9200E4637E /* TimeCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCodeCell.swift; sourceTree = "<group>"; };
 		EA72189D25129F5500E4637E /* TimeCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCode.swift; sourceTree = "<group>"; };
+		EA920BA925135F7A0091190E /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				EA6AB832251222B100E92ECC /* NewPodcastTableViewController.swift */,
 				EA7218932512867200E4637E /* EditPodcastViewController.swift */,
+				EA920BA925135F7A0091190E /* PreviewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				EA6AB81A251210D400E92ECC /* SceneDelegate.swift in Sources */,
 				EA7218942512867200E4637E /* EditPodcastViewController.swift in Sources */,
 				EA72189C25129C9200E4637E /* TimeCodeCell.swift in Sources */,
+				EA920BAA25135F7A0091190E /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
