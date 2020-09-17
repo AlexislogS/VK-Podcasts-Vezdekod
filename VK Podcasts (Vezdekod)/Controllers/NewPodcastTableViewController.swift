@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import AVFoundation
 
 final class NewPodcastTableViewController: UITableViewController {
     
@@ -35,6 +36,13 @@ final class NewPodcastTableViewController: UITableViewController {
     
     private var imageChanged = false
     private var podcastURL: URL?
+    
+    private var dateComponentsFormatter: DateComponentsFormatter {
+            let formatter = DateComponentsFormatter()
+            formatter.allowedUnits = [.minute, .second]
+    //        formatter.unitsStyle = .short
+            return formatter
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,7 +181,8 @@ extension NewPodcastTableViewController: UIDocumentPickerDelegate {
     private func updateUIAfterImport(for url: URL) {
         podcastURL = url
         podcastNameLabel.text = url.lastPathComponent
-        podcastDurationLabel.text = "0:21"
+        let player = AVPlayer(url: url)
+        podcastDurationLabel.text = dateComponentsFormatter.string(from: player.currentItem?.asset.duration.seconds ?? 0)
         [uploadButton, uploadStackView].forEach { $0?.isHidden = true }
         [defaultPodcastImageView, podcastNameLabel, podcastDurationLabel, podcastEditLabel, podcastEditButton].forEach { $0?.isHidden = false }
         doneButton.isEnabled = true
