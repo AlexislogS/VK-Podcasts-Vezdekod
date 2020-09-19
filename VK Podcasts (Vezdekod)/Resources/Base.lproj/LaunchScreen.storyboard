@@ -15,24 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VK podcasts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXP-SE-ZCT">
-                                <rect key="frame" x="65" y="418" width="284.5" height="60"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main" translatesAutoresizingMaskIntoConstraints="NO" id="YSC-oY-Dp7">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Rsu-le-cHu"/>
+                                    <constraint firstAttribute="width" constant="100" id="bAF-Cj-s9r"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vXP-SE-ZCT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6nZ-bC-VCe"/>
-                            <constraint firstItem="vXP-SE-ZCT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hqR-i3-f4Q"/>
+                            <constraint firstItem="YSC-oY-Dp7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SEA-M3-Par"/>
+                            <constraint firstItem="YSC-oY-Dp7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uws-aG-GZY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Main" width="1200" height="1200"/>
+    </resources>
 </document>

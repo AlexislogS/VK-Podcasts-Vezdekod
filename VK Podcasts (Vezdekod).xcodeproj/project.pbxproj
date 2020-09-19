@@ -21,6 +21,8 @@
 		EA72189C25129C9200E4637E /* TimeCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72189B25129C9200E4637E /* TimeCodeCell.swift */; };
 		EA72189E25129F5500E4637E /* TimeCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72189D25129F5500E4637E /* TimeCode.swift */; };
 		EA920BAA25135F7A0091190E /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA920BA925135F7A0091190E /* PreviewViewController.swift */; };
+		EA920BAC25136DB20091190E /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA920BAB25136DB20091190E /* PreviewCell.swift */; };
+		EA920BAE251371470091190E /* TimeInterval+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA920BAD251371470091190E /* TimeInterval+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		EA72189B25129C9200E4637E /* TimeCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCodeCell.swift; sourceTree = "<group>"; };
 		EA72189D25129F5500E4637E /* TimeCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCode.swift; sourceTree = "<group>"; };
 		EA920BA925135F7A0091190E /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		EA920BAB25136DB20091190E /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		EA920BAD251371470091190E /* TimeInterval+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			children = (
 				EA6AB81D251210D400E92ECC /* Main.storyboard */,
 				EA72189B25129C9200E4637E /* TimeCodeCell.swift */,
+				EA920BAB25136DB20091190E /* PreviewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				EA72188D251243D800E4637E /* UIViewController+.swift */,
+				EA920BAD251371470091190E /* TimeInterval+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,7 +231,9 @@
 				EA6AB833251222B100E92ECC /* NewPodcastTableViewController.swift in Sources */,
 				EA72189E25129F5500E4637E /* TimeCode.swift in Sources */,
 				EA6AB818251210D400E92ECC /* AppDelegate.swift in Sources */,
+				EA920BAE251371470091190E /* TimeInterval+.swift in Sources */,
 				EA6AB81A251210D400E92ECC /* SceneDelegate.swift in Sources */,
+				EA920BAC25136DB20091190E /* PreviewCell.swift in Sources */,
 				EA7218942512867200E4637E /* EditPodcastViewController.swift in Sources */,
 				EA72189C25129C9200E4637E /* TimeCodeCell.swift in Sources */,
 				EA920BAA25135F7A0091190E /* PreviewViewController.swift in Sources */,

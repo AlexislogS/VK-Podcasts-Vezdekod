@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum SegueID: String {
+    case editPodcastSegue
+    case previewSegue
+}
+
 enum AlertTitle {
     static let failedToGetImage = "Не получилось добавить изображение"
     static let pleaseTryAgain = "Пожалуйста, попробуйте снова"

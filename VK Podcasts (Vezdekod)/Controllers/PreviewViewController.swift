@@ -8,23 +8,43 @@
 
 import UIKit
 
-class PreviewViewController: UIViewController {
-
+final class PreviewViewController: UIViewController {
+    
+    var timeCodes = [TimeCode]()
+    var podcastImage: UIImage?
+    var podcastTitle: String?
+    var podcastDescription: String?
+    var podcastDuration: String?
+    
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var previewImageView: UIImageView!
+    @IBOutlet private weak var previewTitleLabel: UILabel!
+    @IBOutlet private weak var previewDescriptionLabel: UILabel!
+    @IBOutlet private weak var durationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        previewImageView.image = podcastImage
+        previewTitleLabel.text = podcastTitle
+        previewDescriptionLabel.text = podcastDescription
+        durationLabel.text = "Длительность: \(podcastDuration ?? "0")"
+    }
+}
 
-        // Do any additional setup after loading the view.
+    // MARK: - UITableViewDataSource
+
+extension PreviewViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return timeCodes.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PreviewCell.reuseID, for: indexPath) as! PreviewCell
+        let timeCode = timeCodes[indexPath.row]
+        cell.configure(timeCode: timeCode)
+        return cell
     }
-    */
-
 }

@@ -34,24 +34,36 @@ final class NewPodcastTableViewController: UITableViewController {
     @IBOutlet private weak var podcastEditButton: UIButton!
     @IBOutlet private weak var uploadButton: UIButton!
     
+    private var timeCodes = [TimeCode]()
     private var imageChanged = false
     private var podcastURL: URL?
-    
-    private var dateComponentsFormatter: DateComponentsFormatter {
-            let formatter = DateComponentsFormatter()
-            formatter.allowedUnits = [.minute, .second]
-    //        formatter.unitsStyle = .short
-            return formatter
-        }
+    weak var delegate: TimeCodesDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         [explicitButton, excludeButton, trailerButton].forEach { $0?.setImage(#imageLiteral(resourceName: "check_box_on_24"), for: .selected)}
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let timeCodes = delegate?.getTimeCodes() {
+            self.timeCodes = timeCodes
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let editVC = segue.destination as? EditPodcastViewController {
+        if segue.identifier == SegueID.editPodcastSegue.rawValue,
+            let editVC = segue.destination as? EditPodcastViewController {
             editVC.podcastURL = podcastURL
+            editVC.timeCodes = timeCodes
+            delegate = editVC
+        } else if segue.identifier == SegueID.previewSegue.rawValue,
+            let previewVC = segue.destination as? PreviewViewController {
+            previewVC.podcastImage = podcastImageView.image
+            previewVC.podcastTitle = podcastTitleTextField.text
+            previewVC.podcastDescription = podcastDescriptionTextField.text
+            previewVC.podcastDuration = podcastDurationLabel.text
+            previewVC.timeCodes = timeCodes
         }
     }
     
@@ -64,7 +76,6 @@ final class NewPodcastTableViewController: UITableViewController {
         let path = Bundle.main.path(forResource: "test", ofType: "mp3")!
             let url = URL(fileURLWithPath: path)
             updateUIAfterImport(for: url)
-        
         #else
         let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeAudio as String], in: .import)
         documentPicker.delegate = self
@@ -182,7 +193,7 @@ extension NewPodcastTableViewController: UIDocumentPickerDelegate {
         podcastURL = url
         podcastNameLabel.text = url.lastPathComponent
         let player = AVPlayer(url: url)
-        podcastDurationLabel.text = dateComponentsFormatter.string(from: player.currentItem?.asset.duration.seconds ?? 0)
+        podcastDurationLabel.text = player.currentItem?.asset.duration.seconds.toString(allowedUnits: [.minute, .second])
         [uploadButton, uploadStackView].forEach { $0?.isHidden = true }
         [defaultPodcastImageView, podcastNameLabel, podcastDurationLabel, podcastEditLabel, podcastEditButton].forEach { $0?.isHidden = false }
         doneButton.isEnabled = true

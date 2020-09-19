@@ -9,14 +9,18 @@
 import UIKit
 import MediaPlayer
 
+protocol TimeCodesDelegate: AnyObject {
+    func getTimeCodes() -> [TimeCode]
+}
+
 final class EditPodcastViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var selectSongButton: UIButton!
     
     var podcastURL: URL?
+    var timeCodes = [TimeCode]()
     private var player: AVPlayer!
-    private var timeCodes = [TimeCode]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,17 +105,21 @@ extension EditPodcastViewController: MPMediaPickerControllerDelegate {
 
 extension EditPodcastViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return timeCodes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeCodeCell.reuseID, for: indexPath) as! TimeCodeCell
         let timeCode = timeCodes[indexPath.row]
         cell.configure(timeCode: timeCode)
         return cell
     }
 }
+
+    // MARK: - UITableViewDelegate
 
 extension EditPodcastViewController: UITableViewDelegate {
     
@@ -122,3 +130,13 @@ extension EditPodcastViewController: UITableViewDelegate {
         }
     }
 }
+
+    // MARK: - TimeCodesDelegate
+
+extension EditPodcastViewController: TimeCodesDelegate {
+    
+    func getTimeCodes() -> [TimeCode] {
+        return timeCodes
+    }
+}
+
