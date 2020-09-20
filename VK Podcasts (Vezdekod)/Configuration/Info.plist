@@ -2,10 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to camera to take a shot</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to photo library to choose a shot</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>To add a song you need to provide access to your music library</string>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>To add a song you need to provide access to your library</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
